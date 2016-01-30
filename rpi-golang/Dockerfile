@@ -11,7 +11,7 @@ ENV GOLANG_BOOTSTRAP_SHA1 486db10dc571a55c8d795365070f66d343458c48
 
 RUN set -ex \
 	&& apk update \
-    && apk add --virtual .build-deps \
+	&& apk add --virtual .build-deps \
 		bash \
 		ca-certificates \
 		gcc \
