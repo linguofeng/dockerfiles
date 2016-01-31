@@ -1,6 +1,8 @@
 FROM hypriot/rpi-alpine-scratch
 
-ENV GOARM 6
+ARG GOARM
+ENV GOARM ${GOARM:-6}
+
 ENV GOLANG_VERSION 1.5.3
 ENV GOLANG_SRC_URL https://golang.org/dl/go$GOLANG_VERSION.src.tar.gz
 ENV GOLANG_SRC_SHA256 754e06dab1c31ab168fc9db9e32596734015ea9e24bc44cae7f237f417ce4efe
