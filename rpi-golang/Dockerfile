@@ -1,7 +1,4 @@
-FROM hypriot/rpi-alpine-scratch
-
-ARG GOARM
-ENV GOARM ${GOARM:-6}
+FROM armhfbuild/alpine:latest
 
 ENV GOLANG_VERSION 1.5.3
 ENV GOLANG_SRC_URL https://golang.org/dl/go$GOLANG_VERSION.src.tar.gz
@@ -12,8 +9,7 @@ ENV GOLANG_BOOTSTRAP_URL https://golang.org/dl/go$GOLANG_BOOTSTRAP_VERSION.src.t
 ENV GOLANG_BOOTSTRAP_SHA1 486db10dc571a55c8d795365070f66d343458c48
 
 RUN set -ex \
-	&& apk update \
-	&& apk add --virtual .build-deps \
+	&& apk add --no-cache --virtual .build-deps \
 		bash \
 		ca-certificates \
 		gcc \
