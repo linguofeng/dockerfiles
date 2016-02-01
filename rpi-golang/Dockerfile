@@ -1,4 +1,4 @@
-FROM armhfbuild/alpine:latest
+FROM multiarch/alpine:armhf-v3.3
 
 ENV GOLANG_VERSION 1.5.3
 ENV GOLANG_SRC_URL https://golang.org/dl/go$GOLANG_VERSION.src.tar.gz
