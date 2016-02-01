@@ -3,6 +3,8 @@ FROM multiarch/alpine:armhf-v3.3
 ENV QEMU_EXECVE 1
 COPY docker-hub/ /usr/bin/
 
+RUN [ "cross-build-start" ]
+
 ENV GOLANG_VERSION 1.5.3
 ENV GOLANG_SRC_URL https://golang.org/dl/go$GOLANG_VERSION.src.tar.gz
 ENV GOLANG_SRC_SHA256 754e06dab1c31ab168fc9db9e32596734015ea9e24bc44cae7f237f417ce4efe
@@ -44,3 +46,5 @@ ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 WORKDIR $GOPATH
+
+RUN [ "cross-build-end" ]
