@@ -1,3 +1,9 @@
+build:
+  image: linguofeng/rpi-golang
+  commands:
+    - go version
+    - unama -a
+
 publish:
   docker:
     environment:
